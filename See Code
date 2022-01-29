@@ -1,0 +1,141 @@
+const chalk = require('chalk');
+
+
+
+const cyan1=chalk.bold.bgCyan
+const red1 = chalk.bold.red;
+const red = chalk.bold.bgRed
+const yellow = chalk.bold.yellow
+const yellow1=chalk.bold.bgYellow
+const blue = chalk.bold.blueBright
+const green1=chalk.bold.bgGreenBright
+const green = chalk.bold.green
+const cyan =chalk.bold.cyanBright
+const magenta=chalk.bold.magentaBright
+const magenta1=chalk.bold.bgMagenta
+var score=0;
+
+var readlineSync = require('readline-sync')
+
+
+
+
+
+var Name = readlineSync.question(red("WHAT'S YOUR NAME? "))
+
+console.log()
+console.log(green1("NAMASTE!!! ") + Name)
+
+console.log()
+console.log(yellow1("WELCOME DO YOU KNOW ME? "))
+
+
+
+function play(question,answer){
+  var userAnswer = readlineSync.question(question + "\n")
+  if(userAnswer === answer){
+    console.log(green("WOW YOU ARE RIGHT 🤩🤩🤩"+"\n"))
+
+    score=score+1;
+    console.log(magenta1("Your Score Is!! " + score))
+    console.log()
+  }
+  
+  else{
+    console.log(red("OH NO YOU WRONG 😔😔😔"))
+    score=score+0;
+    console.log(magenta("Your Score Is!! " + score))
+    console.log()
+  }
+}
+
+// arrey object
+var questions = [{
+  question:"What is my favourite color ",
+  answer:"black",
+},{
+  question:"What is my favourite game? ",
+  answer:"football"
+},
+{
+  question:"Who is my favourite footballar ",
+  answer:"cristiano ronaldo"
+},
+{
+  question:"Which year is my Birthyear ??",
+  answer:"2002"
+},
+{
+  question:"What is my nickname",
+  answer:"chila"
+},
+{
+  question:"What is my favourite food",
+  answer:"biryani",
+}
+
+]
+console.log()
+for(i=0;i<questions.length;i++){
+
+  var currentquestion = questions[i]
+  
+  play(cyan1(currentquestion.question),currentquestion.answer)
+  
+}
+
+console.log(green1("Your Final Score is!! " + score))
+var hightscore = [
+  {
+  Name:"karan",
+
+  Score:"4",
+},
+
+{
+ Name:"shubham",
+
+ Score:"4"
+}
+]
+
+console.log()
+console.log(cyan1("Hightscore"))
+console.log()
+for(var i=0;i<hightscore.length;i++){
+  var scores = hightscore[i]
+  console.log(scores.Name)
+  console.log(scores.Score)
+
+}
+
+var Hightscore=3;
+
+
+
+if(score > Hightscore){
+  console.log(blue("YAYY!!! CONGRATS YOU HAVE BEATEN THE HIGHEST SCORE "))
+  console.log(yellow("please take a screenshot and send it to me \n"))
+  console.log(cyan("PLease Give Me Your Feedback and Thank You \n"))
+}
+else{  console.log(red("Sorry Raise your IQ and come again"))
+}
+console.log()
+console.log(green("Thank You For playing This Game "))
+
+
+// var Hightscore=3;
+
+
+
+// if(score > Hightscore){
+//   console.log("YAYY!!! CONGRATS YOU HAVE BEATEN THE HIGHEST SCORE ")
+//   console.log("please take a screenshot and send it to me \n")
+//   console.log("PLease Give Me Your Feedback and Thank You \n")
+// }
+// else{  console.log("Sorry Raise your IQ and come again")
+// }
+// console.log()
+// console.log(cyan1("Thank You For playing This Game "))
+// console.log(red("---------------"))
+
